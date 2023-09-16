@@ -20,7 +20,7 @@ const pass = 'CPxTjHD7Y5KVopC3';
     // await seedAnime();
 })();
 
-app.get('/anime', async (req, res) => {
+app.get('/', async (req, res) => {
     const anime = await Anime.find({});
     res.json({
         message: 'Anime List',
@@ -29,9 +29,9 @@ app.get('/anime', async (req, res) => {
     });
 });
 
-app.use('/', (req, res) => {
-    res.send('Hello');
-});
+// app.use('/', (req, res) => {
+//     res.send('Hello');
+// });
 
 const port = 8000;
 app.listen(port, () => {
